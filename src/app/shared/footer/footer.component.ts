@@ -12,4 +12,5 @@ export class FooterComponent {
   whatsappLink = 'https://wa.me/967782705557';
   platformLink = 'https://Muafa.app';
   facebookLink = 'https://www.facebook.com/profile.php?id=61582802361994';
+  linkedinLink = 'https://linkedin.com/company/muafaplus';
 }
