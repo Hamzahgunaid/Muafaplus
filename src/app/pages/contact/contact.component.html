@@ -1,1 +1,96 @@
-<p>contact works!</p>
+<section class="page-hero">
+  <div class="container">
+    <h1>تواصل معنا</h1>
+    <p>سجّل مؤسستك أو تواصل مع فريقنا للحصول على مزيد من المعلومات</p>
+  </div>
+</section>
+
+<section class="contact-page">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-form-wrapper">
+        <h2>سجّل مؤسستك</h2>
+        <p>أكمل النموذج التالي وسيتم التواصل معك عبر الواتساب</p>
+
+        @if (!submitted) {
+          <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+            <div class="form-group">
+              <label for="name">الاسم الكامل</label>
+              <input type="text" id="name" name="name" [(ngModel)]="formData.name" required placeholder="أدخل اسمك الكامل">
+            </div>
+            <div class="form-group">
+              <label for="email">البريد الإلكتروني</label>
+              <input type="email" id="email" name="email" [(ngModel)]="formData.email" required placeholder="example@email.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">رقم الهاتف</label>
+              <input type="tel" id="phone" name="phone" [(ngModel)]="formData.phone" required placeholder="+967 xxxxxxxxx">
+            </div>
+            <div class="form-group">
+              <label for="organization">اسم المؤسسة</label>
+              <input type="text" id="organization" name="organization" [(ngModel)]="formData.organization" required placeholder="اسم المستشفى أو العيادة">
+            </div>
+            <div class="form-group">
+              <label for="message">رسالتك</label>
+              <textarea id="message" name="message" [(ngModel)]="formData.message" rows="4" placeholder="اكتب رسالتك هنا..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-large submit-btn" [disabled]="!contactForm.valid">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+              </svg>
+              إرسال عبر واتساب
+            </button>
+          </form>
+        } @else {
+          <div class="success-message">
+            <div class="success-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#21A740" stroke-width="2" width="48" height="48">
+                <path d="M9 12l2 2 4-4"/>
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+            </div>
+            <h3>تم الإرسال بنجاح!</h3>
+            <p>سيتم التواصل معك قريباً عبر الواتساب</p>
+          </div>
+        }
+      </div>
+
+      <div class="contact-info">
+        <div class="info-card">
+          <div class="info-icon green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#21A740" stroke-width="2" width="24" height="24">
+              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+            </svg>
+          </div>
+          <h3>واتساب</h3>
+          <p>تواصل مباشرة مع فريق المبيعات</p>
+          <a [href]="whatsappLink" target="_blank" rel="noopener" class="info-link">+967 782705557</a>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#5092E6" stroke-width="2" width="24" height="24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <h3>البريد الإلكتروني</h3>
+          <p>أرسل لنا استفسارك</p>
+          <a href="mailto:info@muafaplus.com" class="info-link">info&#64;muafaplus.com</a>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon navy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#283481" stroke-width="2" width="24" height="24">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+            </svg>
+          </div>
+          <h3>المنصة</h3>
+          <p>زُر منصة معافى بلس</p>
+          <a [href]="platformLink" target="_blank" rel="noopener" class="info-link">Muafa.app</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

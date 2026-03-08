@@ -1,0 +1,88 @@
+.contact-page { padding: 80px 0; }
+
+.contact-grid {
+  display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px;
+  align-items: start;
+}
+
+.contact-form-wrapper {
+  background: var(--white); padding: 48px;
+  border-radius: var(--radius-lg); border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-sm);
+}
+.contact-form-wrapper h2 {
+  font-family: 'AllGenders','Noto Sans Arabic',sans-serif;
+  font-size: 28px; color: var(--navy); margin-bottom: 8px;
+}
+.contact-form-wrapper > p {
+  font-size: 15px; color: var(--gray-600); margin-bottom: 32px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+
+  label {
+    display: block; font-size: 14px; font-weight: 600;
+    color: var(--gray-800); margin-bottom: 8px;
+  }
+  input, textarea {
+    width: 100%; padding: 14px 18px;
+    border: 1px solid var(--gray-200); border-radius: var(--radius);
+    font-family: inherit; font-size: 15px; color: var(--gray-800);
+    background: var(--gray-50); transition: border-color 0.2s;
+    outline: none;
+
+    &:focus { border-color: var(--blue); background: var(--white); }
+    &::placeholder { color: var(--gray-400); }
+  }
+  textarea { resize: vertical; min-height: 100px; }
+}
+
+.submit-btn {
+  width: 100%; justify-content: center; margin-top: 8px;
+}
+
+.success-message {
+  text-align: center; padding: 48px 0;
+
+  .success-icon { margin-bottom: 20px; }
+  h3 {
+    font-family: 'AllGenders','Noto Sans Arabic',sans-serif;
+    font-size: 24px; color: var(--navy); margin-bottom: 12px;
+  }
+  p { font-size: 16px; color: var(--gray-600); }
+}
+
+.contact-info {
+  display: flex; flex-direction: column; gap: 20px;
+}
+.info-card {
+  padding: 32px; border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200); background: var(--white);
+  transition: all 0.3s ease;
+}
+.info-card:hover { box-shadow: var(--shadow-md); }
+.info-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+}
+.info-icon.green { background: rgba(33,167,64,0.10); }
+.info-icon.blue { background: rgba(80,146,230,0.12); }
+.info-icon.navy { background: rgba(40,52,129,0.08); }
+.info-card h3 {
+  font-family: 'AllGenders','Noto Sans Arabic',sans-serif;
+  font-size: 18px; color: var(--navy); margin-bottom: 8px;
+}
+.info-card p { font-size: 14px; color: var(--gray-600); margin-bottom: 12px; }
+.info-link {
+  font-size: 15px; font-weight: 600; color: var(--blue);
+  text-decoration: none; transition: color 0.2s;
+  direction: ltr; display: inline-block;
+}
+.info-link:hover { color: var(--navy); }
+
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-form-wrapper { padding: 32px; }
+}
